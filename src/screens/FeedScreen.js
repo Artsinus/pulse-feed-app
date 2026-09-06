@@ -47,6 +47,12 @@ export default function FeedScreen() {
 
   function handleBookmark(id) {
     // TODO 7: Toggle bookmarkedIds in Step 8.
+    setBookmarkedIds((current) =>
+  current.includes(id)
+    ? current.filter((postId) => postId !== id)
+    : [...current, id]
+);
+
   }
 
   function renderPost({ item }) {
